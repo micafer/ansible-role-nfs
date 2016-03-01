@@ -4,5 +4,9 @@
   action: file path={{ item.local }} state=directory
   with_items: "{{ nfs_client_imports }}"
 
-- mount: name={{ item.local }} src={{ item.server_host }}:{{ item.remote }} fstype=nfs4 state=mounted
+- mount:
+    name: "{{ item.local }}"
+    src: "{{ item.server_host }}:{{ item.remote }}"
+    fstype: nfs4
+    state: mounted
   with_items: "{{ nfs_client_imports }}"
