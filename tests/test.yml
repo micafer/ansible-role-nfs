@@ -13,11 +13,11 @@
   roles:
     - role: nfs
       nfs_mode: client
-      nfs_client_server_host: 10.0.0.2
       nfs_client_imports:
         -
           local: /test
           remote: /files
+          server_host: 10.0.0.2
 
 - name: test install nfs server on ubuntu 14
   hosts: test03
@@ -32,8 +32,8 @@
   roles:
     - role: nfs
       nfs_mode: client
-      nfs_client_server_host: 10.0.0.2
       nfs_client_imports:
         -
           local: /test
           remote: /files
+          server_host: 10.0.0.2

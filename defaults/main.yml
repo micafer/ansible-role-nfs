@@ -3,6 +3,5 @@ nfs_mode: server # or client
 
 nfs_exports: []
 
-nfs_client_server_host: '' #
 nfs_client_imports: []
 nfs_client_mount: yes
