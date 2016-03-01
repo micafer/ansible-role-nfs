@@ -16,7 +16,7 @@
 
 - name: Ensure directories to export exist
   file: path="{{ item.strip().split()[0] }}" state=directory
-  with_items: nfs_exports
+  with_items: nfs_server_exports
 
 - name: Copy exports file.
   template:
@@ -29,4 +29,4 @@
 
 - name: Ensure nfs is running.
   service: "name={{ nfs_server_daemon }} state=started enabled=yes"
-  when: nfs_exports|length
+  when: nfs_server_exports|length
