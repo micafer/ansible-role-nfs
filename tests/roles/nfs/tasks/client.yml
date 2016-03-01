@@ -1,4 +1,0 @@
-- include: "setup-client-{{ ansible_os_family }}.yml"
-
-- mount: name={{ item.local }} src={{ nfs_client_server_host}}:{{ item.remote }} fstype=nfs state=present
-  with_items: "{{ nfs_client_imports }}"
