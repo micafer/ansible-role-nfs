@@ -1,5 +1,3 @@
-
-- name: Include mode-specific variables.
-  include_vars: "{{ nfs_mode }}.yml"
-
+---
+#
 - include: "{{ nfs_mode }}.yml"
