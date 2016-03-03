@@ -37,3 +37,12 @@
           local: /test
           remote: /files
           server_host: 10.0.0.2
+
+- name: test install server locally
+  hosts: 127.0.0.1
+  connection: local
+  roles:
+    - role: nfs
+      nfs_mode: server
+      nfs_exports:
+        - /installers  *(ro,sync,no_root_squash)
